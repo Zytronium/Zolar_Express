@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title><%= headline %> | The Zolar Express</title>
+    <meta name="title" content="<%= headline %> | The Zolar Express"/>
+    <meta name="description" content="A Starscape news article on The Zolar Express titled '<%= headline %>'"/>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="<%= headline %> | The Zolar Express"/>
+    <meta property="og:description" content="A Starscape news article on The Zolar Express titled '<%= headline %>'"/>
+    <meta property="og:url" content="https://zolarexpress.thefactionnexus.tech/article/<%= slug %>"/>
+    <meta property="og:type" content="article"/>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/styles/colors.css"/>
+    <link rel="stylesheet" href="/styles/style.css"/>
+    <link rel="stylesheet" href="/styles/news_view.css"/>
+    <link rel="stylesheet" href="/styles/news_tags.css"/>
+</head>
+
+<!-- Body -->
+<body>
+<!-- Article Layout -->
+<main class="container" style="max-width: 900px; margin-top: 5rem;">
+    <article class="news-article">
+        <header>
+            <h1 id="article-headline" class="title"><%= headline %></h1>
+            <div class="meta-info">
+                <p id="author"><%= author %></p>
+                <p id="created-at"><%= publish_date %></p>
+                <p id="updated-at"><%= updatedAt %></p>
+            </div>
+            <p class="meta-info" id="tags">Tags: <%= tags %></p>
+        </header>
+
+        <hr>
+
+        <section id="article-content" class="article-body" style="white-space: pre-line; font-size: 1.1rem; line-height: 1.8;">
+            <%= content %>
+        </section>
+        <button class="share-button" onclick="navigator.share ? navigator.share({ title: document.title, text: document.getElementById('article-headline').innerText, url: window.location.href }) : alert('Sharing not supported on this browser.')">
+            Share Article
+        </button>
+
+    </article>
+</main>
+
+</body>
+</html>

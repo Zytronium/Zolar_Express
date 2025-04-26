@@ -1,0 +1,38 @@
+:root {
+    /* Main Theme Colors */
+    --color-primary: #00e6ff; /* Cyan Primary */
+    --color-secondary: #00a3b4; /* Dark Cyan Secondary */
+    --color-tertiary: #ffbf1e; /* Gold Tertiary */
+    --color-accent: #8460ef; /* Purple Accent */
+
+    /* Additional Colors */
+    --primary-500: #00a3b4;
+    --primary-300: #00bfd9;
+    --light-black: #0a0a0e;
+    --darker-gray: #0f0e15;
+    --gray: #13161a;
+    --lighter-gray: #393e44;
+    --translucent-gray: rgba(19, 22, 26, 0.5);
+
+    /* Element Colors */
+    --color-text-field: #2d2d3d; /* Text Field Background */
+    --color-background: #080808; /* Background color */
+    --color-translucent-background: rgba(8, 8, 8, 0.8); /* Less Opaque Background color */
+    --color-container-bg: rgba(0, 0, 0, 0.6); /* Container Background */
+    --color-text: #ffffff; /* Text color */
+    --color-link : #00ffbb; /* Main Link Color */
+    --color-link-visited : #826cff; /* Main Link Color */
+    --color-link-active : #3a77d2; /* Main Link Color */
+
+    /* Other */
+    --text-glow: 0 0 10px rgba(0, 230, 255, 0.8), /* Cyan Glow */
+    0 0 20px rgba(0, 230, 255, 0.6),
+    0 0 30px rgba(0, 230, 255, 0.4);
+
+    --navbar-gradient: 45deg, rgb(0 19 21 / 35%), rgb(0 4 4 / 75%); /* Dim gray with a hint of blue -> Black */
+
+    /* Alias Variables (based on existing theme colors) */
+    --color-hover: var(--lighter-gray); /* Lighter gray for hover effects */
+    --color-border: var(--primary-300); /* Primary-300 for borders */
+    --color-highlight: var(--color-tertiary); /* Tertiary for highlights */
+}

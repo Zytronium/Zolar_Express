@@ -29,23 +29,32 @@ main {
 
 .news-card {
     background: #1e1e30;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 0 5px #000;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
 }
 
 .news-card h3 {
     margin-top: 0;
+    font-size: 1.4rem;
 }
 
 .news-card .meta {
     font-size: 0.9rem;
     color: #aaa;
+    margin-bottom: 1rem;
 }
 
 .read-more {
     color: #6ec1ff;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .read-more:hover {

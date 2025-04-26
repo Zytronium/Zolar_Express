@@ -8,10 +8,19 @@ mongoose.connect('mongodb://localhost:27017/zolarexpress').then(async () => {
     console.log('Database is empty.');
   } else {
     for (const col of collections) {
-      const count = await db.collection(col.name).countDocuments();
+      const collection = db.collection(col.name);
+      const count = await collection.countDocuments();
       console.log(`${col.name}: ${count} document(s)`);
+
+      if (count > 0) {
+        const documents = await collection.find().toArray(); // <-- Fetch documents!
+        for (const document of documents) {
+          // console.log(`doc headline: ${document.headline}`);
+          console.log(document);
+        }
+      }
     }
   }
 
-  mongoose.disconnect();
+  await mongoose.disconnect();
 }).catch(err => console.error(err));

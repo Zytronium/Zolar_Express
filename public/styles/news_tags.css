@@ -1,0 +1,57 @@
+@keyframes flashRedWhite {
+    0% { background-color: #ff1e00; color: #210503; }
+    15% { background-color: #ff1e00; color: #210503; }
+    50% { background-color: #210503; color: #ff1e00; }
+    65% { background-color: #210503; color: #ff1e00; }
+    100% { background-color: #ff1e00; color: #210503; }
+}
+
+.tag-alert {
+    font-size: 14px !important;                        /* Gold */
+    animation: flashRedWhite 1.5s infinite;            /* Red & Black flash */
+}
+
+.tag-announcement {
+    color: #FFBF1EFF !important;                       /* Gold */
+    background-color: #8460EFFF !important;            /* Purple */
+}
+
+.tag-satire {
+    color: #d454ff !important;                         /* Hot pinkish purple */
+    background-color: #2a174b !important;              /* Dark purple */
+}
+
+.tag-game-update {
+    color: #00e6ff !important;                         /* Bright cyan */
+    background-color: #003c47 !important;              /* Deep teal */
+}
+
+.tag-battle-report {
+    color: #ff4d4d !important;                         /* Bright red */
+    background-color: #231818 !important;              /* Dark red */
+}
+
+.tag-faction-politics {
+    color: #0affba !important;                         /* Minty teal */
+    background-color: #00332a !important;              /* Dark Minty teal */
+}
+
+.tag-faction-warfare {
+    color: antiquewhite !important;                    /* Antique white*/
+    background-color: #960000 !important;              /* Deep crimson */
+}
+
+.tag-economy {
+    color: #ffd644 !important;                         /* Pale gold */
+    background-color: #493e15 !important;              /* Dark gold */
+}
+
+.tag-event {
+    color: white !important;
+    background-color: #805ee8 !important;              /* Purple */
+}
+
+.tag-ad {
+    color: rgb(128, 255, 128) !important;              /* Light green */
+    background-color: var(--gray) !important;          /* Dark gray */
+}

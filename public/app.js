@@ -12,13 +12,18 @@ async function fetchNews() {
     }
 
     articles.forEach(article => {
+      let articleContent = article.content;
+
+      if (articleContent.length > 256) {
+        articleContent = articleContent.substring(0, 255) + '...';
+      }
       const card = document.createElement('div');
       card.className = 'news-card';
       card.innerHTML = `
-        <h3>${article.title}</h3>
-        <p class="meta">By ${article.publisherName} • ${new Date(article.date).toLocaleDateString()}</p>
-        <p>${article.summary}</p>
-        <a href="/factions/${article.slug}" class="read-more">Read more</a>
+        <h3>${article.headline}</h3>
+        <p class="meta">By ${article.author} • ${new Date(article.publish_date).toLocaleDateString()}</p>
+        <p>${articleContent}</p>
+        <a href="/article/${article.slug}" class="read-more">Read more</a>
       `;
       newsList.appendChild(card);
     });
