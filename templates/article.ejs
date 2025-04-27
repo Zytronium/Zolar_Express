@@ -30,11 +30,13 @@
         <header>
             <h1 id="article-headline" class="title"><%= headline %></h1>
             <div class="meta-info">
-                <p id="author"><%= author %></p>
-                <p id="created-at"><%= publish_date %></p>
-                <p id="updated-at"><%= updatedAt %></p>
+                <p id="author"><a href="/publisher?id=<%= publisherId %>" style="text-decoration: none"><%= publisherName %></a></p>
+                <p id="created-at">Published: <%= publish_date %></p>
+                <p id="updated-at">Updated: <%= updatedAt %></p>
             </div>
-            <p class="meta-info" id="tags">Tags: <%= tags %></p>
+            <div class="meta-info" id="tags">
+                <%- tagsHTML %> <!-- Render tags HTML here -->
+            </div>
         </header>
 
         <hr>

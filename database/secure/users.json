@@ -1,0 +1,9 @@
+[
+  {
+    "id": 0,
+    "username": "ADMIN",
+    "admin": true,
+    "password": "[redacted]",
+    "discord_id": "0"
+  }
+]
