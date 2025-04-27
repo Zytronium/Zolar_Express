@@ -24,6 +24,17 @@
 
 <!-- Body -->
 <body>
+<!-- Background Video -->
+<div class="video-container">
+    <video id="background-video" autoplay loop muted>
+        <source src="/videos/background-video.webm" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<!-- Invisible Overlay to prevent "show controls" or disable "loop" when right-clicking -->
+<div class="video-overlay"></div>
+
 <!-- Article Layout -->
 <main class="container" style="max-width: 900px; margin-top: 5rem;">
     <article class="news-article">
@@ -42,7 +53,7 @@
         <hr>
 
         <section id="article-content" class="article-body" style="white-space: pre-line; font-size: 1.1rem; line-height: 1.8;">
-            <%= content %>
+            <%- content %>
         </section>
         <button class="share-button" onclick="navigator.share ? navigator.share({ title: document.title, text: document.getElementById('article-headline').innerText, url: window.location.href }) : alert('Sharing not supported on this browser.')">
             Share Article

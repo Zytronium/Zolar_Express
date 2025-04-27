@@ -2,11 +2,18 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const { marked } = require('marked');
+const { JSDOM } = require('jsdom');
+const createDOMPurify = require('dompurify');
 const app = express();
 const PORT = 3000;
 const router = express.Router();
 const newsFilePath = path.join(__dirname, 'database/news_articles.json');
 const publisherFilePath = path.join(__dirname, 'database/news_publishers.json');
+
+// Initialize DOMPurify
+const window = new JSDOM('').window;
+const DOMPurify = createDOMPurify(window);
 
 // Tell Express to use EJS
 app.set('view engine', 'ejs');
@@ -73,13 +80,13 @@ app.get('/article/:slug', async (req, res) => {
             res.render('article', {
                 headline: article.headline,
                 author: article.author,
-                publisherName, // Add publisher name for clickable link
-                publisherId: publisher?.id, // Pass the publisher id for the link
+                publisherName, // Clickable link with publisher's name and initials
+                publisherId: publisher?.id, // For the publisher link
                 createdAt: new Date(article.created_at).toLocaleDateString(),
                 updatedAt: new Date(article.updated_at).toLocaleDateString(),
                 publish_date: new Date(article.publish_date).toLocaleDateString(),
-                tagsHTML, // Pass the HTML for tags
-                content: article.content,
+                tagsHTML, // Sanitized HTML tags list
+                content: renderMarkdown(article.content), // Sanitized Markdown rendered article content
                 slug: article.slug
             });
         });
@@ -102,7 +109,7 @@ function getPublisherName(publisher, author) {
         name += ` (${publisher.initials})`;
     }
 
-    return 'obamna';
+    return name;
 }
 
 // Slugify an article headline
@@ -122,6 +129,11 @@ function escapeHTML(str) {
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;")
       .replace(/'/g, "&#039;");
+}
+
+
+function renderMarkdown(content) {
+    return DOMPurify.sanitize(marked.parse(content));
 }
 
 // Test route: create new article

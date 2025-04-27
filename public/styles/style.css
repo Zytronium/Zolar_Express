@@ -15,6 +15,10 @@ body {
     background: var(--color-background);
 }
 
+h6 {
+    color: darkgray;
+}
+
 .centered-text {
     text-align: center !important;
 }
@@ -89,6 +93,48 @@ a:visited {
 a:active {
     color: var(--color-link-active);
 }
+
+blockquote {
+    border-left: 4px solid var(--color-accent); /* Discord's signature blue border color */
+    /* Padding for the blockquote */
+    padding: 10px 10px 10px 16px;
+    margin-left: 0; /* Remove any default margin */
+    margin-right: 0; /* Remove any default margin */
+    font-style: italic; /* Make text italic */
+    color: #b9bbbe; /* Light grey text color for blockquote text */
+    background-color: var(--color-text-field); /* Dark background for the blockquote */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 1rem; /* Font size for readability */
+    line-height: 1.5; /* Spacing between lines */
+}
+
+blockquote p {
+    margin: 0; /* Remove default margin for paragraphs inside the blockquote */
+}
+
+pre, code {
+    background-color: var(--gray); /* Dark background like Discord's code block */
+    color: var(--color-text); /* White text color */
+    border-radius: 4px; /* Rounded corners */
+    padding: 12px; /* Padding for better spacing */
+    font-family: 'Courier New', monospace; /* Monospaced font for code */
+    font-size: 0.95rem; /* Adjusted font size for readability */
+    line-height: 1.5; /* Line height for multiline code */
+    overflow-x: auto; /* Enable horizontal scrolling if content is too wide */
+}
+
+pre {
+    padding: 16px; /* Extra padding for <pre> block */
+    margin: 10px 0; /* Margin for spacing around the block */
+}
+
+code {
+    background-color: transparent; /* Transparent background for inline code */
+    padding: 0.2rem 0.4rem; /* Padding around inline code */
+    border-radius: 4px; /* Rounded corners for inline code */
+    font-size: 1rem; /* Default font size for inline code */
+}
+
 
 /* Background video container */
 .video-container {

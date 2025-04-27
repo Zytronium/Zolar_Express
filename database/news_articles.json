@@ -2,7 +2,7 @@
   {
     "headline": "Test Article",
     "author": "SYSTEM",
-    "content": "<script>alert('You\\'ve been hacked!')</script>",
+    "content": "# Main Heading (H1)\n\n## Subheading (H2)\n\n### Sub-Subheading (H3)\n\n###### Tiny-Subheading (H6)\n\nThis is a paragraph with **bold text**, *italic text*, and ***bold italic text***.\n\nYou can also have ~~strikethrough text~~ like this.\n\n---\n\n**Blockquote example:**\n\n> This is a blockquote.\n> \n> It can have multiple lines!\n\n---\n\n**List examples:**\n\n- Item 1\n- Item 2\n    - Subitem 2.1\n    - Subitem 2.2\n- Item 3\n\n1. First\n2. Second\n3. Third\n\n---\n\n**Code examples:**\n\nInline code: `const x = 5;`\n\nMulti-line code block:\n\n```javascript\nfunction greet(name) {\n    console.log(`Hello, ${name}!`);\n}\ngreet('World');\n```\n\n---\n\n**Table example:**\n\n| Syntax | Description |\n|--------|-------------|\n| Header | Title |\n| Paragraph | Text |\n\n---\n\n**Link and Image example:**\n\n- [Visit OpenAI](https://openai.com)\n- ![Example Image](https://imgs.search.brave.com/WuhLdiTdAGBhs0HplFkkSdZXNGK6Pyy3eySuoY7tS8s/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/am5odzRoZW02ejU5/MS5qcGc_YXV0bz13/ZWJwJnM9YTc0NWQz/OTYxZDc1ODMwMTUw/NDFjNDIxNWZiOGIy/NzEwNjliNTAxNg)\n\n---\n\n**Horizontal Rule:**\n\n---\n\n**HTML inside Markdown:**\n\n<div style=\"color: red;\">This is an HTML div inside markdown!</div>\n\n---\n\n**Blocked Malicious Script Injection:**\n\n<script>alert('You\\'ve been hacked! Aha!');</script>\n\n**Test:** 'test' \\'.",
     "slug": "test-article",
     "tags": [
       "test",
