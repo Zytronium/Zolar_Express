@@ -39,6 +39,18 @@
     color: var(--color-link);
 }
 
+h1 {
+    font-size: 2rem;
+}
+
+ul {
+   list-style-type: initial;
+}
+
+h6 {
+    margin-top: -2.5rem !important;
+}
+
 #tags {
     font-size: 12px;
     margin-top: 12px;
